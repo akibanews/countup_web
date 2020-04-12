@@ -40,3 +40,9 @@ console.log(copiedTeam);
 // copy array using spread
 const copiedSecTeam = [...team];
 console.log(copiedSecTeam);
+
+//destructing
+const personName = ({ greet }) => {
+    console.log(greet());
+}
+personName(person);
