@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./server/app.js",
-    "sandbox": "node ./server/app.js"
+    "start": "nodemon ./server/app.js",
+    "sandbox": "nodemon ./server/app.js"
   },
   "repository": {
     "type": "git",
