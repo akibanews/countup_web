@@ -19,6 +19,7 @@ const requestHandler = (req, res) => {
         });
         req.on('end', () => {
             const parsedBody = Buffer.concat(body).toString();
+            console.log(parsedBody);
             const message = parsedBody.split('=')[1];
             fs.writeFileSync('./hello.txt', message);
             return res.end();
@@ -27,4 +28,5 @@ const requestHandler = (req, res) => {
     res.end();
 }  
 
-module.exports = requestHandler;
+// module.exports.handler = requestHandler;
+exports.handler = requestHandler;
