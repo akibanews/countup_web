@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "sandbox": "node app.js"
+    "start": "node ./server/app.js",
+    "sandbox": "node ./server/app.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
     "url": "https://github.com/akibanews/countup_web/issues"
   },
   "homepage": "https://github.com/akibanews/countup_web#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "nodemon": "^2.0.3"
   }
 }
