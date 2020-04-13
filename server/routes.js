@@ -21,7 +21,7 @@ const requestHandler = (req, res) => {
             const parsedBody = Buffer.concat(body).toString();
             console.log(parsedBody);
             const message = parsedBody.split('=')[1];
-            fs.writeFileSync('./hello.txt', message);
+            fs.writeFileSync('./server/hello.txt', message);
             return res.end();
         });
     }
