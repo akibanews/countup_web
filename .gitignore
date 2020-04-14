@@ -1,3 +1,6 @@
 # ignore node_module
 node_modules/
-server/hello.text
+server/hello.txt
+
+# .vscode files
+*.vscode

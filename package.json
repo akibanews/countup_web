@@ -18,7 +18,10 @@
     "url": "https://github.com/akibanews/countup_web/issues"
   },
   "homepage": "https://github.com/akibanews/countup_web#readme",
-  "dependencies": {},
+  "dependencies": {
+    "assert": "^2.0.0",
+    "mongodb": "^3.5.5"
+  },
   "devDependencies": {
     "nodemon": "^2.0.3"
   }

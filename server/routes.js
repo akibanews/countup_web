@@ -1,4 +1,6 @@
 const fs = require('fs');
+const assert = require('assert');
+const MongoClient = require('mongodb').MongoClient;
 
 const requestHandler = (req, res) => {
     const url = req.url;
@@ -21,10 +23,19 @@ const requestHandler = (req, res) => {
             const parsedBody = Buffer.concat(body).toString();
             console.log(parsedBody);
             const message = parsedBody.split('=')[1];
-            fs.writeFileSync('./server/hello.txt', message);
-            return res.end();
+            MongoClient.connect("mongodb://localhost:27017/", (err, client) => {
+                assert.equal(err, null);
+                console.log('Connected to server successfully.')
+                var db = client.db('myTestingDataBase');
+                db.collection('people', (err, collection) => {
+                    collection.insert({"name": message});
+                });
+            });
         });
     }
+    res.writeHead(301, {
+        Location: 'http://localhost:3000/'
+    });
     res.end();
 }  
 
