@@ -23,19 +23,24 @@ const requestHandler = (req, res) => {
             const parsedBody = Buffer.concat(body).toString();
             console.log(parsedBody);
             const message = parsedBody.split('=')[1];
-            MongoClient.connect("mongodb://localhost:27017/", (err, client) => {
+            fs.writeFile('./server/hello.txt', message, (err) => {
                 assert.equal(err, null);
-                console.log('Connected to server successfully.')
-                var db = client.db('myTestingDataBase');
-                db.collection('people', (err, collection) => {
-                    collection.insert({"name": message});
-                });
+                return;
             });
+            // MongoClient.connect("mongodb://localhost:27017/", (err, client) => {
+            //     assert.equal(err, null);
+            //     console.log('Connected to server successfully.')
+            //     var db = client.db('myTestingDataBase');
+            //     db.collection('people', (err, collection) => {
+            //         collection.insert({"name": message});
+            //     });
+            // });
+            return res.end();
         });
     }
-    res.writeHead(301, {
-        Location: 'http://localhost:3000/'
-    });
+    // res.writeHead(301, {
+    //     Location: 'http://localhost:3000/'
+    // });
     res.end();
 }  
 

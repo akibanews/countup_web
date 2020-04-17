@@ -20,6 +20,7 @@
   "homepage": "https://github.com/akibanews/countup_web#readme",
   "dependencies": {
     "assert": "^2.0.0",
+    "express": "^4.17.1",
     "mongodb": "^3.5.5"
   },
   "devDependencies": {
