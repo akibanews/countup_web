@@ -11,4 +11,4 @@ router.post('/add-user', (req, res, next) => {
     res.redirect('/');
 });
 
-module.exports = router;
+exports.routes = router;

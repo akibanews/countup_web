@@ -5,11 +5,12 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-const adminRoutes = require('../routes/admin');
+const adminData = require('../routes/admin');
 const shopRoutes = require('../routes/home');
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use('/admin', adminRoutes);
+app.use(express.static(path.join(__dirname, '../', 'public')));
+app.use('/admin', adminData.routes);
 app.use(shopRoutes);
 
 // we listen on port 3000
