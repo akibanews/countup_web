@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/add-user', (req, res, next) => {
-    res.render('add-user');
+    res.render('add-user', {path:'/', pageTitle:'Register'});
 });
 
 router.post('/add-user', (req, res, next) => {
