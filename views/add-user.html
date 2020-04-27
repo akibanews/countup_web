@@ -11,14 +11,17 @@
         <nav class="main-header__nav">
             <ul class="main-header__item-list">
                 <li class="main-header__item"><a href="/">Home</a></li>
-                <li class="main-header__item"><a href="/admin/add-user">Add User</a></li>
+                <li class="main-header__item"><a href="/admin/add-user">Register</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <form action="/admin/add-user" method="POST">
-            <input type="text" name="userName">
+            <lable for="fname">First Name:</lable><br>
+            <input type="text" name="fname"><br>
+            <lable for="lname">Last Name:</lable><br>
+            <input type="text" name="lname"><br>
             <button type="submit">Register</button>
         </form>
     </main>
