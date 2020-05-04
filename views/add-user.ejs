@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add User</title>
+    <title><%= pageTitle %></title>
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
@@ -15,21 +15,14 @@
             </ul>
         </nav>
     </header>
-
     <main>
         <form action="/admin/add-user" method="POST">
-            <lable for="fname">First Name:</lable><br>
-            <input type="text" name="fname"><br>
-            <lable for="lname">Last Name:</lable><br>
-            <input type="text" name="lname"><br>
-            <button type="submit">Register</button>
-
-            form(method="POST" action="/")
-        <div class="form-group">
-            <label for="email"> Email address </label> 
-            <input class="form-control" type="text" placeholder="Enter email" email='email'>
-            <small class="form-text"> We'll never share your email with anyone else. </small> 
-        </div>
+            <div class="form-group">
+                <label for="email"> Email address </label><br>
+                <input class="form-control" type="text" placeholder="Enter email" email='email'><br>
+                <small class="form-text"> We'll never share your email with anyone else. </small><br>
+                <button type="submit">Register</button>
+            </div>
         </form>
     </main>
 </body>
